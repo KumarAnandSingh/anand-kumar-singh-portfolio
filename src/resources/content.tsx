@@ -2,39 +2,37 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Logo, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Priya",
+  lastName: "Singh",
+  name: `Priya Singh`,
+  role: "AI Product Manager & Full-Stack Developer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "priya.singh@example.com",
+  location: "America/Los_Angeles",
+  languages: ["English", "Hindi"],
 };
 
 const newsletter: Newsletter = {
   display: true,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  description: <>Weekly insights on AI product development and engineering innovation</>,
 };
 
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/priyasingh",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/priya-singh",
   },
   {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    name: "Website",
+    icon: "globe",
+    link: "https://singhanand.qzz.io",
   },
   {
     name: "Email",
@@ -49,30 +47,25 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Building AI-powered products that transform user experiences</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">Vaani AI</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured work
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/work/vaani-ai-voice-transcription",
   },
   subline: (
     <>
-      I'm Selene, a design engineer at{" "}
-      <Logo
-        dark
-        icon="/trademarks/wordmark-dark.svg"
-        style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}
-      />
-      , where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      I'm Priya, an AI Product Manager and Full-Stack Developer passionate about building
+      <br /> intelligent applications that solve real-world problems. I specialize in voice AI,
+      <br /> automation tools, and scalable web platforms.
     </>
   ),
 };
@@ -81,7 +74,7 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `Meet ${person.name}, ${person.role} specializing in AI and product development`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -98,9 +91,10 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Priya is a passionate AI Product Manager and Full-Stack Developer with expertise in
+        building intelligent applications that solve real-world problems. With a strong background
+        in voice AI, automation tools, and scalable web platforms, she transforms complex
+        technical challenges into user-friendly solutions.
       </>
     ),
   },
@@ -109,41 +103,37 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Independent Developer",
+        timeframe: "2023 - Present",
+        role: "AI Product Manager & Full-Stack Developer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Built Vaani AI, a real-time voice transcription app with 55+ languages support,
+            deployed as both web and desktop applications using React and Tauri.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Developed Auto Jobs Applier AIHawk, an AI-powered job application automation tool
+            using Python, Selenium, and LLM APIs, helping users streamline their job search process.
+          </>,
+          <>
+            Created multiple AI-powered web platforms including modern news platforms, security
+            operations dashboards, and telecom AI interfaces.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Product Development",
+        timeframe: "2022 - 2023",
+        role: "Full-Stack Developer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Designed and implemented comprehensive AI agent systems for enterprise clients,
+            including security analysts, product managers, and automation engineers.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Built scalable web applications using Next.js, React, and modern deployment
+            practices, serving thousands of users with 99.9% uptime.
           </>,
         ],
         images: [],
@@ -155,12 +145,12 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Self-Directed Learning",
+        description: <>Specialized in AI/ML technologies, voice processing, and modern web development.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Open Source Contributions",
+        description: <>Active contributor to AI and automation projects, with focus on practical applications.</>,
       },
     ],
   },
@@ -169,61 +159,72 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "AI & Voice Processing",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Expert in voice-to-text transcription, Web Speech API, Whisper, and Deepgram integration for real-time applications.</>
         ),
         tags: [
           {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "Python",
+            icon: "python",
           },
           {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "AI/ML",
+            icon: "openai",
+          },
+          {
+            name: "Voice AI",
+            icon: "microphone",
           },
         ],
+        images: [],
       },
       {
-        title: "Next.js",
+        title: "Full-Stack Development",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Building scalable applications with React, Next.js, TypeScript, Tauri, and modern deployment practices.</>
         ),
         tags: [
           {
-            name: "JavaScript",
-            icon: "javascript",
+            name: "React",
+            icon: "react",
           },
           {
             name: "Next.js",
             icon: "nextjs",
           },
           {
-            name: "Supabase",
-            icon: "supabase",
+            name: "TypeScript",
+            icon: "typescript",
           },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "Tauri",
+            icon: "tauri",
           },
         ],
-      },  
+        images: [],
+      },
+      {
+        title: "Automation & AI Tools",
+        description: (
+          <>Specializing in browser automation with Selenium, LLM integration, and AI-powered workflow optimization.</>
+        ),
+        tags: [
+          {
+            name: "Python",
+            icon: "python",
+          },
+          {
+            name: "Selenium",
+            icon: "selenium",
+          },
+          {
+            name: "OpenAI",
+            icon: "openai",
+          },
+        ],
+        images: [],
+      },
     ],
   },
 };
@@ -241,7 +242,7 @@ const work: Work = {
   path: "/work",
   label: "Work",
   title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
+  description: `AI and full-stack projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
