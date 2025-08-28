@@ -47,7 +47,7 @@ export async function generateMetadata({
     title: post.metadata.title,
     description: post.metadata.summary,
     baseURL: baseURL,
-    image: post.metadata.image || `/api/og/generate?title=${post.metadata.title}`,
+    image: post.metadata.image || post.metadata.images?.[0],
     path: `${work.path}/${post.slug}`,
   });
 }
@@ -83,9 +83,7 @@ export default async function Project({
         description={post.metadata.summary}
         datePublished={post.metadata.publishedAt}
         dateModified={post.metadata.publishedAt}
-        image={
-          post.metadata.image || `/api/og/generate?title=${encodeURIComponent(post.metadata.title)}`
-        }
+        image={post.metadata.image || post.metadata.images?.[0]}
         author={{
           name: person.name,
           url: `${baseURL}${about.path}`,
@@ -112,13 +110,13 @@ export default async function Project({
                     ,{" "}
                   </Text>
                 )}
-                <SmartLink href={member.linkedIn}>{member.name}</SmartLink>
+                <SmartLink href={member.linkedIn || "#"}>{member.name}</SmartLink>
               </span>
             ))}
           </Text>
         </Row>
       </Row>
-      {post.metadata.images.length > 0 && (
+      {post.metadata.images && post.metadata.images.length > 0 && (
         <Media priority aspectRatio="16 / 9" radius="m" alt="image" src={post.metadata.images[0]} />
       )}
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">

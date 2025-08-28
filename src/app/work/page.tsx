@@ -1,36 +1,26 @@
-import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
-import { baseURL, about, person, work } from "@/resources";
+import { Column, Heading, Text } from "@once-ui-system/core";
 import { Projects } from "@/components/work/Projects";
+import { baseURL, work, person } from "@/resources";
+import { Meta } from "@once-ui-system/core";
 
 export async function generateMetadata() {
   return Meta.generate({
     title: work.title,
     description: work.description,
     baseURL: baseURL,
-    image: `/api/og/generate?title=${encodeURIComponent(work.title)}`,
     path: work.path,
   });
 }
 
 export default function Work() {
   return (
-    <Column maxWidth="m" paddingTop="24">
-      <Schema
-        as="webPage"
-        baseURL={baseURL}
-        path={work.path}
-        title={work.title}
-        description={work.description}
-        image={`/api/og/generate?title=${encodeURIComponent(work.title)}`}
-        author={{
-          name: person.name,
-          url: `${baseURL}${about.path}`,
-          image: `${baseURL}${person.avatar}`,
-        }}
-      />
-      <Heading marginBottom="l" variant="heading-strong-xl" align="center">
-        {work.title}
-      </Heading>
+    <Column maxWidth="m" horizontal="center" gap="l">
+      <Column maxWidth="s" gap="16" horizontal="center" align="center">
+        <Heading variant="display-strong-m">{work.title}</Heading>
+        <Text variant="body-default-m" onBackground="neutral-weak">
+          {work.description}
+        </Text>
+      </Column>
       <Projects />
     </Column>
   );
